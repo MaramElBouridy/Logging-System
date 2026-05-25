@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import LoginPage from "./pages/LoginPage";
 import DashboardPage from "./pages/DashboardPage";
 import ApplicationPage from "./pages/ApplicationPage";
+import ApplicationsPage from "./pages/ApplicationsPage";
 import RegisterPage from "./pages/RegisterPage";
 import "./index.css"
 
@@ -14,7 +15,8 @@ function App() {
         <Route path="/" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
-        <Route path="/applications/:name" element={<ApplicationPage />} />
+        <Route path="/applications" element={<ApplicationsPage />} />
+        <Route path="/applications/:id" element={<ApplicationPage />} />
       </Routes>
     </BrowserRouter>
   );

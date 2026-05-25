@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar";
+import ApplicationList from "../components/ApplicationList";
 
 export default function DashboardPage() {
   return (
@@ -240,6 +241,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Applications Section */}
+
         <div className="bg-[#111111] border border-gray-800 rounded-2xl p-6 mb-8">
 
           <div className="flex items-center justify-between mb-6">
@@ -260,76 +262,10 @@ export default function DashboardPage() {
 
           </div>
 
-          {/* Applications Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
 
-            {/* App Card */}
-            <div className="bg-black border border-gray-800 rounded-2xl p-5 hover:border-blue-500 transition">
-
-              <div className="flex items-center justify-between mb-4">
-
-                <h3 className="text-lg font-semibold">
-                  Auth Service
-                </h3>
-
-                <span className="text-green-400 text-sm">
-                  Active
-                </span>
-
-              </div>
-
-              <p className="text-gray-400 text-sm mb-5">
-                Authentication microservice
-              </p>
-
-              <div className="flex items-center justify-between">
-
-                <button className="text-blue-400 hover:text-blue-300 text-sm">
-                  View Details
-                </button>
-
-                <button className="text-red-400 hover:text-red-300 text-sm">
-                  Delete
-                </button>
-
-              </div>
-
-            </div>
-
-            {/* App Card */}
-            <div className="bg-black border border-gray-800 rounded-2xl p-5 hover:border-blue-500 transition">
-
-              <div className="flex items-center justify-between mb-4">
-
-                <h3 className="text-lg font-semibold">
-                  Payment API
-                </h3>
-
-                <span className="text-yellow-400 text-sm">
-                  Warning
-                </span>
-
-              </div>
-
-              <p className="text-gray-400 text-sm mb-5">
-                Handles payment processing
-              </p>
-
-              <div className="flex items-center justify-between">
-
-                <button className="text-blue-400 hover:text-blue-300 text-sm">
-                  View Details
-                </button>
-
-                <button className="text-red-400 hover:text-red-300 text-sm">
-                  Delete
-                </button>
-
-              </div>
-
-            </div>
-
-          </div>
+          {/* Applications List Component */}
+          <ApplicationList/>
+           
 
         </div>
 
