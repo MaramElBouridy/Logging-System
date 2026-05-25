@@ -3,6 +3,7 @@ import Log from "../models/Log.js";
 import Application from "../models/Application.js";
 import { validateApiKey } from "../middleware/apiKeyMiddleware.js";
 import { protect } from "../middleware/authMiddleware.js";
+import apiKeyAuth from "../middleware/apiKeyAuth.js";
 
 const router = express.Router();
 
@@ -40,6 +41,17 @@ router.post("/:name/logs", validateApiKey, async (req, res) => {
   }
 
   res.json(log);
+});
+
+router.post("/logs", apiKeyAuth, async (req, res) => {
+  const { level, message } = req.body;
+  const log = new Log({
+    appName: req.application.name,
+    level,
+    message
+  });
+  await log.save();
+  res.status(201).json({ message: "Log saved", log });
 });
 
 export default router;
